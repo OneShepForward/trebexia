@@ -8,6 +8,7 @@ import NavBar from './NavBar';
 function App() {
   const [user, setUser] = useState(null);
 
+  // THIS WOULD BE TO HAVE USER INFO SAVED IN SESSION
   useEffect(() => {
     fetch("http://127.0.0.1:3000/me").then((response) => {
       if (response.ok) {
