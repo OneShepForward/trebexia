@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/App.css';
 import NavBar from './NavBar';
 
@@ -6,25 +6,33 @@ import NavBar from './NavBar';
 
 
 function App() {
+  const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
 
-    //copied login Hoa created from Phase 3, still need to set up a usercontroller on backend 
-    // const [user, setUser] = useState(localStorage.getItem("user"));
+  function handleLogin(user) {
+    setUser(user);
+  }
 
-    // useEffect(() => {
-    //     fetch("http://localhost:4000/me", { credentials: "include" })
-    //       .then((r) => r.json())
-    //       .then((data) => {
-    //         setUser(data.user);
-    //         localStorage.setItem("user", data.user);
-    //       });
-    //   }, []);
+  function handleLogout() {
+    setUser(null);
+  }
+
 
   return (
 
-        <div className="quiz">
-
-            <NavBar />
+        <div className="App">
+          
+          <NavBar  
+            user={user} 
+            onLogin={handleLogin} 
+            onLogout={handleLogout}/>
 
         </div>
 
