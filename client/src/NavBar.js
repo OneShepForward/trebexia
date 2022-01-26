@@ -11,7 +11,8 @@ import {
     Link,
 } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ user, onLogin, onLogout }) {
+
 
 
     return (
@@ -23,10 +24,21 @@ function NavBar() {
                 <h1 class="logo"><a href="/">Trebexia Trivia</a></h1>
             </Link> 
 
+
             <ul class="main-nav">
-            <Link to="/">Home</Link>
+            <Link to="/" 
+                user={user}
+                onLogin={onLogin} 
+                onLogout={onLogout}>
+                Home
+            </Link>
             <Link to="/scores">Scores</Link>
-            <Link to="/login">Login</Link>
+            <Link to="/login" 
+                user={user} 
+                onLogin={onLogin} 
+                onLogout={onLogout}>
+                Login
+            </Link>
             </ul>
         </nav>        
         </header> 
