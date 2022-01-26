@@ -1,23 +1,42 @@
-import React, { useState } from 'react';
-import './App.css';
-import Start from './Start';
-import Game from './Game';
+import React, { useState, useEffect } from 'react';
+import './styles/App.css';
+import NavBar from './NavBar';
 
-// import {
-//   BrowserRouter,
-//   Switch,
-//   Route,
-//   Link,
-// } from "react-router-dom";
+
+
 
 function App() {
- 
-  const [start, setStart] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  function handleLogin(user) {
+    setUser(user);
+  }
+
+  function handleLogout() {
+    setUser(null);
+  }
+
 
   return (
-    <div className="quiz">
-      { start ? <Game /> : <Start props={setStart} />} 
-    </div>
+
+        <div className="App">
+          
+          <NavBar  
+            user={user} 
+            onLogin={handleLogin} 
+            onLogout={handleLogout}/>
+
+        </div>
+
+
   );
 }
 
