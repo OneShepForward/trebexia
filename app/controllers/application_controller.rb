@@ -5,8 +5,8 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
 
   def current_user # needs to change once authentication is set up
-    User.find_by_username("Jimbo")
-    # User.find_by_id(session[:user_id])
+    # User.find_by_username("Jimbo")
+    User.find_by_id(session[:user_id])
   end
 
   private
