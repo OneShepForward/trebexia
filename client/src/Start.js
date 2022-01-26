@@ -18,8 +18,8 @@ const Start = ({props}) => {
  
     return (
         <Intro>
-            <h1>Trebexia Trivia</h1>
-            <h4>Go ahead smarty-pants, test your trivia mettle.</h4>
+            <h1>Go ahead smarty-pants.</h1>
+            <h4>Test your trivia mettle.</h4>
             <Button onClick={startQuiz} css={btnCSS}>Begin</Button>
         </Intro>
     )
