@@ -2,7 +2,7 @@ import React from "react";
 
 function ScoreCard ({ score }) {
 
-    console.log(score)
+    console.log("Score card has: ", score)
     
     return (                
         <div>
