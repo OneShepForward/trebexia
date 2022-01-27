@@ -12,7 +12,12 @@ function App() {
   useEffect(() => {
     fetch("http://127.0.0.1:3000/me").then((response) => {
       if (response.ok) {
-        response.json().then((user) => setUser(user));
+        response.json().then((user) => {
+          console.log("/me says the user is:", user)
+          setUser(user)
+        });
+      } else {
+        response.json().then((error) => console.log(error))
       }
     });
   }, []);
@@ -34,6 +39,8 @@ function App() {
           <NavBar  
             user={user} 
             onLogin={handleLogin} 
+            // changing this to set state directly to see if that works
+            // onLogin={setUser} 
             onLogout={handleLogout}/>
 
         </div>

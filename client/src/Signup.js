@@ -2,48 +2,38 @@ import React, { useState } from "react";
 import './styles/App.css';
 import Button from "./Button";
 
-function Login({ onLogin }) {
+function Signup({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
-
-    // When submitting the login using onLogin, I kept getting error:
-    // Login.js:29 Uncaught (in promise) TypeError: onLogin is not a function
-    // at Login.js:29:1. Made this to debug.
-
-    function testFunc(variable) {
-      // console.log(variable)
-      onLogin(variable)
-    }
-
+    const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("http://127.0.0.1:3000/login_the_user", {
+        // users/create route
+        fetch("http://127.0.0.1:3000/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ 
-            username,
-            password,
-         }),
+          body: JSON.stringify({
+              username,
+              password,
+              password_confirmation: passwordConfirmation,          
+          }),
         }).then((r) => {
           if (r.ok) {
             // r.json().then((user) => onLogin(user));
-            r.json().then((user) => testFunc(user));
-          }
-          else {
-            r.json().then((errors) => console.log(errors));
+            r.json().then((user) => console.log(user));
           }
         });
       }
 
-      console.log("username:", username, "password:", password)
-      // console.log("username:", username)
+    //   console.log("username:", username, "password:", password)
+      console.log("username:", username, "password:", password, "conf:", passwordConfirmation)
   
     return (
       <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2>Signup</h2>
         <label htmlFor="username">Username: </label>
         <input
           type="text"
@@ -60,11 +50,19 @@ function Login({ onLogin }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
-        <Button type="submit">Login</Button>
+        <label htmlFor="password_confirmation">Confirm Password: </label>
+        <input
+          type="password"
+          id="password_confirmation"
+          value={passwordConfirmation}
+          onChange={(e) => setPasswordConfirmation(e.target.value)}
+        />
+        <br></br>
+        <Button type="submit">Signup</Button>
       </form>
     );
  }
 
 
 
-export default Login;
+export default Signup;

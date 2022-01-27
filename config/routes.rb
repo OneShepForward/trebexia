@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/game_to_render/:id', to: "games#game_to_render"
   get '/me', to: "users#show"
-  post '/login', to: "sessions#login"
+  post '/login_the_user', to: "sessions#login_the_user"
   delete '/logout', to: "sessions#logout"
 
   # Routing logic: fallback requests for React Router.
