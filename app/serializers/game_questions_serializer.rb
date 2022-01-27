@@ -1,6 +1,4 @@
 class GameQuestionsSerializer < ActiveModel::Serializer
-  attributes :id
-
   has_many :question_1
   has_many :question_2
   has_many :question_3
