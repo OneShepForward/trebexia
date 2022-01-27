@@ -1,4 +1,10 @@
 class ScoresController < ApplicationController
+    skip_before_action :authorize
+
+    def index 
+        scores = Score.all
+        render json: scores 
+    end
 
     def show
         game = Game.find(params[:id])
