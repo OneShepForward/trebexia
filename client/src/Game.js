@@ -7,18 +7,19 @@ function Game () {
     const [num, setNum] = useState(1);
     const [points, setPoints] = useState(0);
 
-
-
     useEffect(() => {
-        fetch("http://127.0.0.1:3000/game_to_render/1")
-        .then((response) => {
-          if (response.ok) {
-            response.json().then((questions) => console.log(questions))
-          }
-        });
-      }, []);    
-    
+      fetch("http://127.0.0.1:3000/game_to_render/1").then((response) => {
+        if (response.ok) {
+          response.json().then((user) => {
+            console.log("success", user)
+          });
+        } else {
+          response.json().then((error) => console.log(error))
+        }
+      });
+    }, []);
 
+    
 return (
     <div className="question">
         <h2>Question {num} of 7</h2>
