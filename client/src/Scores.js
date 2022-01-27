@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './styles/App.css';
+import ScoreCard from "./ScoreCard";
 
 function Scores() {
     const [questions, setQuestions] = useState([])
@@ -28,6 +29,7 @@ function Scores() {
         <div>
             {renderQuestions()}
             <h2>Scores</h2>
+            {renderScores()}
         </div>
     )
 }
