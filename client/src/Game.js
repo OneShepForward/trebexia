@@ -7,14 +7,16 @@ function Game () {
 
     const [num, setNum] = useState(1);
     const [points, setPoints] = useState(0);
-    const [questions, setQuestions] = useState([])
+    const [questions, setQuestions] = useState([]);
+
+
 
 
     useEffect(() => {
         fetch("https://morganick.herokuapp.com/game_to_render/1").then((response) => {
           if (response.ok) {
             response.json().then((question_array) => {
-            //   console.log(question_array)
+              console.log("Game fetched: ", question_array)
                 setQuestions(question_array)
             });
           } else {
@@ -27,7 +29,10 @@ function Game () {
         // console.log("renderQuestion hit", questions)
         return Object.values(questions).map(q => 
           <div className="question" key={q.id}>
-            <QuestionCard key={q.id} q={q} />
+            <QuestionCard 
+            key={q.id} 
+            q={q}
+            />
           </div>
         )
     }
