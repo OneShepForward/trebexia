@@ -8,10 +8,9 @@ function Home({ user, onLogin, onLogout }) {
     const [start, setStart] = useState(false);
 
 
-
     return (
         <div>
-            { start ? <Game /> : 
+            { start ? <Game handleEnd={setStart}/> : 
             <Start handleStart={setStart} 
                 user={user} 
                 onLogin={onLogin} 

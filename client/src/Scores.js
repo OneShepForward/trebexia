@@ -19,6 +19,7 @@ function Scores() {
         });
       }, []);
 
+
     return (
       <div className="table">
           <h2>Top Scores</h2>

@@ -2,12 +2,9 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Button from './Button';
 
-const Intro = styled.div`
-  text-align: center;
-`;
 
 const btnCSS = css`
-    margin-top: 2em;
+    margin-top: 5em;
 `;
 
 
@@ -16,9 +13,10 @@ function Start ({ handleStart, user, onLogin, onLogout }) {
     const startQuiz = () => handleStart(true)
  
     return (
-        <Intro>
+        <div className="start-quiz">
+
             <h1>Go ahead smarty-pants.</h1>
-            <h4>Test your trivia mettle.</h4>
+            <h4>Let's see how much of a trivia guru you are.</h4>
             <br/>
             <label id="label" className="label">Select a game: </label>
             <select id="select-game" className="dropdown">
@@ -38,7 +36,8 @@ function Start ({ handleStart, user, onLogin, onLogout }) {
             <br/>
             <Button onClick={startQuiz} css={btnCSS}>Begin</Button>
 
-        </Intro>
+        </div>
+
     )
 }
 

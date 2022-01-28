@@ -3,7 +3,7 @@ import Button from "./Button";
 import QuestionCard from "./QuestionCard";
 import GameOver from "./GameOver";
 
-function Game () {
+function Game ({ handleEnd }) {
 
     const [num, setNum] = useState(1);
     const [points, setPoints] = useState(0);
@@ -13,7 +13,6 @@ function Game () {
       setPoints(points + pts);
       setNum(num + 1);
     }
-
 
     useEffect(() => {
         fetch("https://morganick.herokuapp.com/game_to_render/1").then((response) => {
@@ -50,8 +49,10 @@ function Game () {
         </div>
     )
     } else {
-      return (<GameOver />)
+      return (<GameOver handleEnd={handleEnd}/>)
     }
+
+
 
 
 }
