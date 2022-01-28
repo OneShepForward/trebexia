@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import QuestionCard from "./QuestionCard";
-
+import GameOver from "./GameOver";
 
 function Game () {
 
@@ -10,7 +10,6 @@ function Game () {
     const [questions, setQuestions] = useState([]);
 
     function handleNextQ(pts) {
-      console.log(pts)
       setPoints(points + pts);
       setNum(num + 1);
     }
@@ -33,22 +32,29 @@ function Game () {
         // console.log("renderQuestion hit", questions)
         return Object.values(questions).map(q => 
           <div className="question" key={q.id}>
+          {/* this is mapping over an array of questions, i just want to pull the first question */}
             <QuestionCard 
             key={q.id} 
             q={q}
+            num={num}
             handleNextQ={handleNextQ}
             />
           </div>
         )
     }
-    
-return (
-    <div className="question">
-        <h2>Question {num} of 7</h2>
-        {renderQuestions()}
-        <h2>Points: {points}</h2>
-    </div>
-)
+    if (num <= 7) {
+      return (
+        <div className="question">
+            <h2>Question {num} of 7</h2> 
+            {renderQuestions()}
+            <h2>Points: {points}</h2> 
+        </div>
+    )
+    } else {
+      return (<GameOver />)
+    }
+
+
 }
 
 export default Game;
