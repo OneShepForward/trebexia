@@ -17,6 +17,10 @@ h1, h4 {
   margin: .5em;
 }
 
+h2 {
+  padding: 10px
+}
+
 
 div {
   margin-top: 8em;
@@ -24,7 +28,16 @@ div {
 }
 
 .question {
-	margin: .5em;
+  margin: .5em;
+}
+
+.scores-list {
+  margin: 1em;
+}
+
+ol {
+  text-align: center;
+  list-style-position: inside;
 }
 
 
