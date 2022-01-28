@@ -3,7 +3,7 @@ import Button from "./Button";
 import QuestionCard from "./QuestionCard";
 import GameOver from "./GameOver";
 
-function Game () {
+function Game ({ api_url }) {
 
     const [num, setNum] = useState(1);
     const [points, setPoints] = useState(0);
@@ -16,7 +16,7 @@ function Game () {
 
 
     useEffect(() => {
-        fetch("https://morganick.herokuapp.com/game_to_render/1").then((response) => {
+        fetch(`${api_url}/game_to_render/1`).then((response) => {
           if (response.ok) {
             response.json().then((question_array) => {
               console.log("Game fetched: ", question_array)
