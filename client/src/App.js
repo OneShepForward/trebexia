@@ -6,22 +6,30 @@ import NavBar from './NavBar';
 function App() {
   const [user, setUser] = useState(null);
 
+  // comment in the api_url that you're using
   // const api_url = "http://127.0.0.1:3000"
   const api_url = "https://morganick.herokuapp.com" 
 
 
   // THIS WOULD BE TO HAVE USER INFO SAVED IN SESSION
   useEffect(() => {
-    fetch(`${api_url}/me`).then((response) => {
+    // Does this need to just be "/me" for the fetch? Hmmm....
+    fetch(`${api_url}/me`).then((response) => 
+    // console.log(response)
+    {
       if (response.ok) {
         response.json().then((user) => {
           console.log("/me says the user is:", user)
           setUser(user)
         });
       } else {
-        response.json().then((error) => console.log(error))
+        response.json().then((error) => {
+          // debugger
+          console.log("/me response is not ok: ", error)
+        })
       }
-    });
+    }
+    );
   }, []);
 
   function handleLogin(user) {

@@ -8,40 +8,32 @@ class UsersController < ApplicationController
 
     def create
         user = User.create!(user_params)
-        if user.valid?
+        # if user.valid?
             render json: user, status: :created
             session[:user_id] = user.id
+        # else
+        # render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+        # end
+    end
+
+    def show
+        # byebug
+        if current_user
+            render json: current_user, status: :ok
         else
-        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+            render json: {error: "No one is logged in"}, status: :unauthorized
         end
     end
 
-    ## original try for the me
-    # def show
-    #     if current_user
-    #         render json: current_user, status: :ok
-    #     else
-    #         byebug
-    #         render json: "No one is logged in", status: :unauthorized
-    #     end
-    # end
-
-    ## pulled from labs
-    # def show
-    #     # render json: @current_user
-    #     render status: :ok
-    #     byebug
-    # end
-
     ## from first authenticate lesson
-    def show
-        user = User.find_by(id: session[:user_id])
-        if user
-          render json: user
-        else
-          render json: { error: "Not authorized" }, status: :unauthorized
-        end
-      end
+    # def show
+    #     user = User.find_by(id: session[:user_id])
+    #     if user
+    #       render json: user
+    #     else
+    #       render json: { error: "Not authorized" }, status: :unauthorized
+    #     end
+    #   end
 
     def destroy 
         user = User.find(params[:id])
