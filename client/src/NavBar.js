@@ -23,7 +23,7 @@ console.log(user)
         <nav>
             <Link to="/">
                 <h1 class="logo"><a href="/">Trebexia Trivia</a></h1>
-                {user ? <h2 class="welcome">Welcome, {user.username}!</h2> : <h2>Please sign in</h2>}
+                {user ? <h2 class="welcome">Welcome, {user.username}!</h2> : <h4>Please sign up or sign in</h4>}
             </Link> 
 
 

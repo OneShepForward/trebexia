@@ -10,7 +10,7 @@ function Signup({ onLogin }) {
     function handleSubmit(e) {
         e.preventDefault();
         // users/create route
-        fetch("http://127.0.0.1:3000/users", {
+        fetch("https://morganick.herokuapp.com/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
