@@ -16,6 +16,7 @@ class UsersController < ApplicationController
         end
     end
 
+    ## original try for the me
     # def show
     #     if current_user
     #         render json: current_user, status: :ok
@@ -26,11 +27,21 @@ class UsersController < ApplicationController
     # end
 
     ## pulled from labs
+    # def show
+    #     # render json: @current_user
+    #     render status: :ok
+    #     byebug
+    # end
+
+    ## from first authenticate lesson
     def show
-        # render json: @current_user
-        render status: :ok
-        byebug
-    end
+        user = User.find_by(id: session[:user_id])
+        if user
+          render json: user
+        else
+          render json: { error: "Not authorized" }, status: :unauthorized
+        end
+      end
 
     def destroy 
         user = User.find(params[:id])

@@ -15,6 +15,12 @@ import {
 function NavBar({ user, onLogin, onLogout }) {
 console.log(user)
 
+function handleLogout(e) {
+    fetch("https://morganick.herokuapp.com/logout", {
+        method: "DELETE",
+      }).then(() => onLogout());
+}
+
 
     return (
 
@@ -30,8 +36,9 @@ console.log(user)
             <ul class="main-nav">
             <Link to="/">Home</Link>
             <Link to="/scores">Scores</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
+            {/* Displays Login and Sign up if there is not active user and Logout if there is */}
+            {user ? <></> : <Link to="/login">Login</Link> }
+            {user ? <a onClick={(e)=>handleLogout(e)}>Log out</a> : <Link to="/signup">Sign Up</Link> }            
             </ul>
         </nav>        
         </header> 
