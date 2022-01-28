@@ -4,9 +4,12 @@ class SessionsController < ApplicationController
     ## Code from https://learning.flatironschool.com/courses/4552/pages/password-protection?module_item_id=346182
         def login_the_user
             user = User.find_by(username: params[:username])
-            if user&.authenticate(params[:password])
+            if user.authenticate(params[:password])
               session[:user_id] = user.id
+              # byebug
               render json: user, status: :created
+              ## testing to track down me issues
+              # render json: {session_id: session[:user_id]}
             else
               render json: { error: "Invalid username or password" }, status: :unauthorized
             end
