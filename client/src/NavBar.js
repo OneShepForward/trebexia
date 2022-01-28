@@ -19,15 +19,16 @@ console.log(user)
     return (
 
     <div>
-        <header class="header">
+        <header className="header">
         <nav>
+            <h1 class="logo"><a href="/">Trebexia Trivia</a></h1>
             <Link to="/">
-                <h1 class="logo"><a href="/">Trebexia Trivia</a></h1>
+
                 {user ? <h2 class="welcome">Welcome, {user.username}!</h2> : <h4>Please sign up or sign in</h4>}
             </Link> 
 
 
-            <ul class="main-nav">
+            <ul className="main-nav">
             <Link to="/">Home</Link>
             <Link to="/scores">Scores</Link>
             <Link to="/login">Login</Link>

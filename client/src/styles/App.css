@@ -8,9 +8,10 @@ body, html {
   background-color: #101427;
   color: #e2e2e2;
   overflow-x: hidden;
-
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
+  line-height: 1;
+  margin: 0;
 }
 
 h1, h4 {
@@ -23,7 +24,7 @@ h2 {
 
 
 div {
-  margin-top: 8em;
+  margin-bottom: 1em;
   text-align: center;
 }
 
@@ -35,9 +36,32 @@ div {
   margin: 1em;
 }
 
-ol {
+.table {
   text-align: center;
-  list-style-position: inside;
+  margin: .5em;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.label {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
