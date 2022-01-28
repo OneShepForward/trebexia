@@ -44,7 +44,7 @@ function Login({ onLogin }) {
     return (
       <form onSubmit={handleSubmit}>
         <h2>Login</h2>
-        <label htmlFor="username">Username: </label>
+        <label id="username">Username: </label>
         <input
           type="text"
           id="username"
@@ -52,7 +52,7 @@ function Login({ onLogin }) {
           onChange={(e) => setUsername(e.target.value)}
         />
         <br/>
-        <label htmlFor="password">Password: </label>
+        <label id="password">Password: </label>
         <input
           type="password"
           id="password"

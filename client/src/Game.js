@@ -32,7 +32,6 @@ function Game () {
         // console.log("renderQuestion hit", questions)
         return Object.values(questions).map(q => 
           <div className="question" key={q.id}>
-          {/* this is mapping over an array of questions, i just want to pull the first question */}
             <QuestionCard 
             key={q.id} 
             q={q}
