@@ -29,7 +29,7 @@ function Scores() {
         <div>
             {renderQuestions()}
             <h2>Scores</h2>
-            {renderScores()}
+
         </div>
     )
 }
