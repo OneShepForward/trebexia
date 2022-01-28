@@ -6,5 +6,7 @@ class Question < ApplicationRecord
     has_many :question_5, class_name: "Game", foreign_key: "question_5_id"
     has_many :question_6, class_name: "Game", foreign_key: "question_6_id"
     has_many :question_7, class_name: "Game", foreign_key: "question_7_id"
+
+    validates :question, uniqueness: true
     
 end
