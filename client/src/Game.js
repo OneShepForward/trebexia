@@ -14,7 +14,7 @@ function Game ({ api_url, handleEnd }) {
       setPoints(points + pts);
       setNum(num + 1);
     }
-
+    
     useEffect(() => {
         fetch(`${api_url}/game_to_render/1`).then((response) => {
           if (response.ok) {
