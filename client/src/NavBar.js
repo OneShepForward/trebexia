@@ -12,8 +12,14 @@ import {
     Link,
 } from "react-router-dom";
 
-function NavBar({ user, onLogin, onLogout }) {
+function NavBar({ user, onLogin, onLogout, api_url }) {
 console.log(user)
+
+function handleLogout(e) {
+    fetch(`${api_url}/logout`, {
+        method: "DELETE",
+      }).then(() => onLogout());
+}
 
 
     return (
@@ -31,8 +37,9 @@ console.log(user)
             <ul className="main-nav">
             <Link to="/">Home</Link>
             <Link to="/scores">Scores</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
+            {/* Displays Login and Sign up if there is not active user and Logout if there is */}
+            {user ? <></> : <Link to="/login">Login</Link> }
+            {user ? <a onClick={(e)=>handleLogout(e)}>Log out</a> : <Link to="/signup">Sign Up</Link> }            
             </ul>
         </nav>        
         </header> 
@@ -41,6 +48,7 @@ console.log(user)
         <Switch>
             <Route path="/login">
                 <Login 
+                api_url = {api_url}
                 user={user} 
                 onLogin={onLogin} 
                 onLogout={onLogout}
@@ -48,11 +56,14 @@ console.log(user)
             </Route>
 
             <Route path="/scores">
-                <Scores />
+                <Scores
+                api_url = {api_url}
+                />
             </Route>
 
             <Route path="/signup">
                 <Signup 
+                api_url = {api_url}
                 user={user} 
                 onLogin={onLogin} 
                 onLogout={onLogout}
@@ -61,6 +72,7 @@ console.log(user)
 
             <Route path="/">
                 <Home
+                api_url = {api_url}
                  user={user}
                  onLogin={onLogin} 
                  onLogout={onLogout}

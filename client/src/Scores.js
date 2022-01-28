@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import './styles/App.css';
 import ScoreCard from "./ScoreCard";
 
-function Scores() {
+function Scores({ api_url }) {
     const [scores, setScores] = useState([])
     console.log(scores)
 
     useEffect(() => {
-        fetch("https://morganick.herokuapp.com/scores").then((response) => {
+        fetch(`${api_url}/scores`).then((response) => {
           if (response.ok) {
             response.json().then((scores) => {
               console.log(scores)
