@@ -6,7 +6,7 @@ function Scores() {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch("http://127.0.0.1:3000/game_to_render/1").then((response) => {
+        fetch("https://morganick.herokuapp.com/game_to_render/1").then((response) => {
           if (response.ok) {
             response.json().then((question_array) => {
             //   console.log(question_array)

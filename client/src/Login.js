@@ -18,7 +18,7 @@ function Login({ onLogin }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("http://127.0.0.1:3000/login_the_user", {
+        fetch("https://morganick.herokuapp.com/login_the_user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
