@@ -6,8 +6,8 @@ import NavBar from './NavBar';
 function App() {
   const [user, setUser] = useState(null);
 
-  const api_url = "http://127.0.0.1:3000"
-  // const api_url = "https://morganick.herokuapp.com" 
+  // const api_url = "http://127.0.0.1:3000"
+  const api_url = "https://morganick.herokuapp.com" 
 
 
   // THIS WOULD BE TO HAVE USER INFO SAVED IN SESSION
