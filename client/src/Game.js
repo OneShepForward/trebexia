@@ -9,7 +9,11 @@ function Game () {
     const [points, setPoints] = useState(0);
     const [questions, setQuestions] = useState([]);
 
-
+    function handleNextQ(pts) {
+      console.log(pts)
+      setPoints(points + pts);
+      setNum(num + 1);
+    }
 
 
     useEffect(() => {
@@ -32,6 +36,7 @@ function Game () {
             <QuestionCard 
             key={q.id} 
             q={q}
+            handleNextQ={handleNextQ}
             />
           </div>
         )
