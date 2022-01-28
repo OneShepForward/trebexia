@@ -12,11 +12,11 @@ import {
     Link,
 } from "react-router-dom";
 
-function NavBar({ user, onLogin, onLogout }) {
+function NavBar({ user, onLogin, onLogout, api_url }) {
 console.log(user)
 
 function handleLogout(e) {
-    fetch("https://morganick.herokuapp.com/logout", {
+    fetch(`${api_url}/logout`, {
         method: "DELETE",
       }).then(() => onLogout());
 }
@@ -47,6 +47,7 @@ function handleLogout(e) {
         <Switch>
             <Route path="/login">
                 <Login 
+                api_url = {api_url}
                 user={user} 
                 onLogin={onLogin} 
                 onLogout={onLogout}
@@ -54,11 +55,14 @@ function handleLogout(e) {
             </Route>
 
             <Route path="/scores">
-                <Scores />
+                <Scores
+                api_url = {api_url}
+                />
             </Route>
 
             <Route path="/signup">
                 <Signup 
+                api_url = {api_url}
                 user={user} 
                 onLogin={onLogin} 
                 onLogout={onLogout}
@@ -67,6 +71,7 @@ function handleLogout(e) {
 
             <Route path="/">
                 <Home
+                api_url = {api_url}
                  user={user}
                  onLogin={onLogin} 
                  onLogout={onLogout}

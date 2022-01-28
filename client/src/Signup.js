@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './styles/App.css';
 import Button from "./Button";
 
-function Signup({ onLogin }) {
+function Signup({ onLogin, api_url }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -10,7 +10,7 @@ function Signup({ onLogin }) {
     function handleSubmit(e) {
         e.preventDefault();
         // users/create route
-        fetch("https://morganick.herokuapp.com/users", {
+        fetch(`${api_url}/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -22,8 +22,8 @@ function Signup({ onLogin }) {
           }),
         }).then((r) => {
           if (r.ok) {
-            // r.json().then((user) => onLogin(user));
-            r.json().then((user) => console.log(user));
+            r.json().then((user) => onLogin(user));
+            // r.json().then((user) => console.log(user));
           }
         });
       }

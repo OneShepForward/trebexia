@@ -3,14 +3,16 @@ import './styles/App.css';
 import NavBar from './NavBar';
 
 
-
-
 function App() {
   const [user, setUser] = useState(null);
 
+  const api_url = "http://127.0.0.1:3000"
+  // const api_url = "https://morganick.herokuapp.com" 
+
+
   // THIS WOULD BE TO HAVE USER INFO SAVED IN SESSION
   useEffect(() => {
-    fetch("https://morganick.herokuapp.com/me").then((response) => {
+    fetch(`${api_url}/me`).then((response) => {
       if (response.ok) {
         response.json().then((user) => {
           console.log("/me says the user is:", user)
@@ -39,9 +41,9 @@ function App() {
           <NavBar  
             user={user} 
             onLogin={handleLogin} 
-            // changing this to set state directly to see if that works
-            // onLogin={setUser} 
-            onLogout={handleLogout}/>
+            api_url = {api_url} 
+            onLogout={handleLogout}
+          />
 
         </div>
 
