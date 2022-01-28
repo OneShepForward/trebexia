@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './styles/App.css';
 import Button from "./Button";
 
-function Login({ onLogin }) {
+function Login({ onLogin, api_url }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -18,7 +18,7 @@ function Login({ onLogin }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("https://morganick.herokuapp.com/login_the_user", {
+        fetch(`${api_url}/login_the_user`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
