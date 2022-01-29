@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Button from "./Button";
-import { Link } from "react-router-dom";
 
 
 function GameOver({ handleEnd }) {
@@ -27,9 +26,11 @@ function GameOver({ handleEnd }) {
         <div>
             <h4>Cheers to you, you trivia guru!</h4>
             <p>Want to go another round?</p>
-            <Button onClick={handleGameOver()}>Play Again</Button> 
-
-
+            {/* I got the play again buttton to link back to home but it does not keep the user logged in */}
+                <Button onClick={()=>handleGameOver()}>
+                <a href="/">
+                Play Again</a>
+                </Button> 
         </div>
     )
 }
