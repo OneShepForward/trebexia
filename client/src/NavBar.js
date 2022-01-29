@@ -9,7 +9,7 @@ import Home from './Home';
 import {
     Switch,
     Route,
-    Link,
+    Link
 } from "react-router-dom";
 
 function NavBar({ user, onLogin, onLogout, api_url }) {
@@ -21,9 +21,7 @@ function handleLogout(e) {
       }).then(() => onLogout());
 }
 
-
     return (
-
     <div>
         <header className="header">
         <nav>
@@ -33,7 +31,6 @@ function handleLogout(e) {
             <Link to="/">
                 {user ? <h2 class="welcome">Welcome, {user.username}!</h2> : <h4>Please sign up or sign in</h4>}
             </Link> 
-
 
             <ul className="main-nav">
             {/* <Link to="/"><a href="/">Home</a></Link> */}
@@ -45,7 +42,6 @@ function handleLogout(e) {
             </ul>
         </nav>        
         </header> 
-
 
         <Switch>
             <Route path="/login">
@@ -80,8 +76,6 @@ function handleLogout(e) {
                 onLogout={onLogout}
                 />
             </Route>
-
-
         </Switch>
 
     </div>

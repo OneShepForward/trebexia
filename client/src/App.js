@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/App.css';
 import NavBar from './NavBar';
-
+import Home from './Home';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -41,18 +41,15 @@ function App() {
     setUser(null);
   }
 
-
   return (
 
         <div className="App">
-          
           <NavBar  
             user={user} 
             onLogin={handleLogin} 
             api_url = {api_url} 
             onLogout={handleLogout}
           />
-
         </div>
 
 
