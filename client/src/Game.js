@@ -4,7 +4,10 @@ import QuestionCard from "./QuestionCard";
 import GameOver from "./GameOver";
 
 
+
+
 function Game ({ api_url, handleEnd }) {
+    console.log(api_url)
 
     const [num, setNum] = useState(1);
     const [points, setPoints] = useState(0);

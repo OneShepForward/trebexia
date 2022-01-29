@@ -27,14 +27,16 @@ function handleLogout(e) {
     <div>
         <header className="header">
         <nav>
-            <h1 class="logo"><a href="/">Trebexia Trivia</a></h1>
             <Link to="/">
-
+            <h1 class="logo">Trebexia Trivia</h1>
+            </Link>
+            <Link to="/">
                 {user ? <h2 class="welcome">Welcome, {user.username}!</h2> : <h4>Please sign up or sign in</h4>}
             </Link> 
 
 
             <ul className="main-nav">
+            {/* <Link to="/"><a href="/">Home</a></Link> */}
             <Link to="/">Home</Link>
             <Link to="/scores">Scores</Link>
             {/* Displays Login and Sign up if there is not active user and Logout if there is */}
@@ -70,12 +72,12 @@ function handleLogout(e) {
                 />
             </Route>
 
-            <Route path="/">
+            <Route exact path="/">
                 <Home
                 api_url = {api_url}
-                 user={user}
-                 onLogin={onLogin} 
-                 onLogout={onLogout}
+                user={user}
+                onLogin={onLogin} 
+                onLogout={onLogout}
                 />
             </Route>
 
