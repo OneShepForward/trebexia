@@ -48,27 +48,6 @@ def init
         #         incorrect_answers: result["incorrect_answers"],
         #     )
         # end
-
-        puts "Creating sample games..."
-        Game.create(
-            question_1_id: 1, 
-            question_2_id: 2,
-            question_3_id: 3,
-            question_4_id: 4,
-            question_5_id: 5,
-            question_6_id: 6,
-            question_7_id: 7,
-        )
-
-        Game.create(
-            question_1_id: 8, 
-            question_2_id: 9,
-            question_3_id: 10,
-            question_4_id: 11,
-            question_5_id: 12,
-            question_6_id: 13,
-            question_7_id: 14,
-        )
         
         puts "Creating sample users..."
         User.create(
@@ -99,7 +78,33 @@ def init
             game_id: 2,
             score: 4
         )
+
+        ## games
+
+        Game.create(
+            question_1_id: 1, 
+            question_2_id: 2,
+            question_3_id: 3,
+            question_4_id: 4,
+            question_5_id: 5,
+            question_6_id: 6,
+            question_7_id: 7,
+        )
+
+        puts "Creating sample games..."
         
+        Game.create(question_1_id: 237, question_2_id: 358, question_3_id: 711, question_4_id: 732, question_5_id: 756, question_6_id: 396, question_7_id: 561)
+
+        Game.create(question_1_id: 62, question_2_id: 106, question_3_id: 139, question_4_id: 182, question_5_id: 183, question_6_id: 267, question_7_id: 329)
+
+        Game.create(question_1_id: 24, question_2_id: 48, question_3_id: 81, question_4_id: 112, question_5_id: 151, question_6_id: 202, question_7_id: 446)
+
+        Game.create(question_1_id: 26, question_2_id: 33, question_3_id: 154, question_4_id: 210, question_5_id: 378, question_6_id: 636, question_7_id: 377)
+        
+        Game.create(question_1_id: 69, question_2_id: 110, question_3_id: 332, question_4_id: 490, question_5_id: 536, question_6_id: 830, question_7_id: 856)
+
+        Game.create(question_1_id: 113, question_2_id: 232, question_3_id: 258, question_4_id: 259, question_5_id: 313, question_6_id: 316, question_7_id: 399)
+
     # categories = [
     #     {
     #     "id": 9,
