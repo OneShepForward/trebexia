@@ -18,12 +18,9 @@ class UsersController < ApplicationController
 
     def show
         # byebug
-        user = User.find(params[:id])
         
         if current_user
             render json: current_user, status: :ok
-        elsif user
-            render json: user 
         else
             render json: {error: "No one is logged in"}, status: :unauthorized
         end
