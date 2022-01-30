@@ -6,7 +6,7 @@ import GameOver from "./GameOver";
 
 
 
-function Game ({ api_url, handleEnd }) {
+function Game ({ api_url, handleEnd, sortBy }) {
     console.log(api_url)
 
     const [num, setNum] = useState(1);
@@ -17,7 +17,10 @@ function Game ({ api_url, handleEnd }) {
       setPoints(points + pts);
       setNum(num + 1);
     }
-    
+
+    const gameNum = parseInt(sortBy);
+    //we should be able to change fetch link to game_to_render/${gameNum} but not working for me
+
     useEffect(() => {
         fetch(`${api_url}/game_to_render/1`).then((response) => {
           if (response.ok) {
