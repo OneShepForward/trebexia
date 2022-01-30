@@ -3,8 +3,17 @@ import './styles/App.css';
 import ScoreCard from "./ScoreCard";
 
 function Scores({ api_url }) {
-    const [scores, setScores] = useState([])
-    console.log(scores)
+    const [scores, setScores] = useState([]);
+    const [scoreSort, setScoreSort] = useState("All Games");
+
+    function handleSort(e) {
+      setScoreSort(e.target.value)
+      console.log(scoreSort)
+      
+      const sortedScores = [...scores].filter(score => score.game.id === scoreSort)
+      console.log(sortedScores)
+    }
+    
 
     useEffect(() => {
         fetch(`${api_url}/scores`).then((response) => {
@@ -40,15 +49,16 @@ function Scores({ api_url }) {
               </tbody>
             </table>
 
-            <label id="label" className="label">Select a game: </label>
-            <select id="select-game" className="dropdown">
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
-                <option value="Option 4">Option 4</option>
-                <option value="Option 5">Option 5</option>
-                <option value="Option 6">Option 6</option>
-                <option value="Option 7">Option 7</option>
+            <label id="label" className="label">See high scores by game: </label>
+            <select id="select-game" onChange={handleSort} value={scoreSort} className="dropdown">
+                <option value="1">All Games</option>
+                <option value="1">General Knowledge</option>
+                <option value="5">Board Games</option>
+                <option value="6">Video Games</option>
+                <option value="7">Science & Nature</option>
+                <option value="8">Mythology</option>
+                <option value="9">Sports</option>
+                <option value="10">History</option>
             </select>
 
 
