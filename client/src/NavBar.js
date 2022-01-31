@@ -13,7 +13,6 @@ import {
 } from "react-router-dom";
 
 function NavBar({ user, onLogin, onLogout, api_url }) {
-// console.log(user)
 
 
 function handleLogout(e) {

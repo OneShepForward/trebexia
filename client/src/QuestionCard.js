@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 
 
-function QuestionCard({ q, handleNextQ, num }) {
+function QuestionCard({ q, handleNextQ, num, qNum }) {
 
     const { id, question, correct_answer, incorrect_answers } = q;
 
@@ -17,10 +17,12 @@ function QuestionCard({ q, handleNextQ, num }) {
         }
     }
 
+    // Wait for incorrect answers to load before continuing...
     if (incorrect_answers) {
         // console.log("incorrect answers: ", incorrect_answers)
         const options = shuffle([...incorrect_answers, correct_answer])
-        if (num === id) {
+        // if (num === id) {
+        if (num === qNum) {
             return (
                 <div className="question" key={id}>
                     <h4>{question}</h4>

@@ -105,6 +105,13 @@ def init
 
         Game.create(question_1_id: 113, question_2_id: 232, question_3_id: 258, question_4_id: 259, question_5_id: 313, question_6_id: 316, question_7_id: 399)
 
+        # Game.create(question_1_id: 3000, question_2_id: 3001, question_3_id: 3002, question_4_id: 3003, question_5_id: 3004, question_6_id: 3005, question_7_id: 3006)
+        # Game.create(question_1_id: 3021, question_2_id: 3022, question_3_id: 3023, question_4_id: 3024, question_5_id: 3025, question_6_id: 3026, question_7_id: 3027)
+        # Game.create(question_1_id: 3031, question_2_id: 3032, question_3_id: 3033, question_4_id: 3034, question_5_id: 3035, question_6_id: 3036, question_7_id: 3037)
+        # Game.create(question_1_id: 3041, question_2_id: 3042, question_3_id: 3043, question_4_id: 3044, question_5_id: 3045, question_6_id: 3046, question_7_id: 3047)
+
+        
+
     # categories = [
     #     {
     #     "id": 9,

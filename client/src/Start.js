@@ -20,7 +20,7 @@ function Start ({ handleStart, user, onLogin, onLogout, handleSort, sortBy  }) {
     return (
         <div className="start-quiz">
 
-            <h1>Go ahead smarty-pants.</h1>
+            <h1>Go ahead, smarty-pants.</h1>
             <h4>Let's see how much of a trivia guru you are.</h4>
             <br/>
             <label id="label" className="label">Select a game: </label>

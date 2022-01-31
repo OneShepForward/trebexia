@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from "react";
-import Button from "./Button";
 import QuestionCard from "./QuestionCard";
 import GameOver from "./GameOver";
 
+import Button from "./Button";
 
 
 
 function Game ({ api_url, handleEnd, sortBy }) {
-    console.log(api_url)
 
     const [num, setNum] = useState(1);
     const [points, setPoints] = useState(0);
     const [questions, setQuestions] = useState([]);
+    // const [questionNumber, setQuestionNumber] = useState(0);
 
     function handleNextQ(pts) {
       setPoints(points + pts);
       setNum(num + 1);
     }
 
-    const gameNum = parseInt(sortBy);
+    let gameNum = parseInt(sortBy);
+    console.log("gameNum :", gameNum)
     //we should be able to change fetch link to game_to_render/${gameNum} but not working for me
 
     useEffect(() => {
-        fetch(`${api_url}/game_to_render/1`).then((response) => {
+        fetch(`${api_url}/game_to_render/${gameNum}`).then((response) => {
           if (response.ok) {
             response.json().then((question_array) => {
               console.log("Game fetched: ", question_array)
@@ -35,16 +36,20 @@ function Game ({ api_url, handleEnd, sortBy }) {
       }, []);
 
     function renderQuestions() {
+      let questionNumber = 0
         // console.log("renderQuestion hit", questions)
-        return Object.values(questions).map(q => 
-          <div className="question" key={q.id}>
-            <QuestionCard 
-            key={q.id} 
-            q={q}
-            num={num}
-            handleNextQ={handleNextQ}
-            />
+        return Object.values(questions).map(q => {
+          questionNumber += 1
+          return <div className="question" key={q.id}>
+              <QuestionCard 
+                key={q.id} 
+                q={q}
+                num={num}
+                handleNextQ={handleNextQ}
+                qNum = {questionNumber}
+              />
           </div>
+          }
         )
     }
     if (num <= 7) {

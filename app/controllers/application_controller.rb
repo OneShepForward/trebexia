@@ -8,7 +8,11 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
 before_action :authorize
 
   def current_user
-    User.find_by_id(session[:user_id])
+    ## using for dev purposes
+    current_user = User.find_by_username("Shep")
+    
+    ## For use in production
+    # User.find_by_id(session[:user_id])
     
     ## alternative code
     # @current_user ||= User.find_by_id(session[:user_id])
