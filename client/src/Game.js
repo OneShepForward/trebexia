@@ -25,9 +25,11 @@ function Game ({ api_url, handleEnd, sortBy }) {
         fetch(`${api_url}/game_to_render/${gameNum}`).then((response) => {
           if (response.ok) {
             response.json().then((question_array) => {
-              // console.log("Game fetched: ", question_array)
                 setQuestions(question_array)
-                // setRendered here when deploying and comment out const timer to clearInterval
+
+                // setRendered here when deploying and comment out from 
+                // const timer to clearInterval
+
                 // setRendered(true)
             });
           } else {
