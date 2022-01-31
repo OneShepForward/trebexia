@@ -18,6 +18,10 @@ h1, h4 {
   margin: .5em;
 }
 
+h1.logo {
+  font-size: 10vw;
+}
+
 h2 {
   padding: 10px
 }

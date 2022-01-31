@@ -4,6 +4,7 @@ import Button from "./Button";
 
 function GameOver({ handleEnd, points, gameNum, api_url }) {
 
+  console.log(points)
     function handleGameOver() {
         // console.log(handleEnd)
         handleEnd(false);
@@ -32,7 +33,8 @@ function GameOver({ handleEnd, points, gameNum, api_url }) {
 
     return (
         <div>
-            <h4>Cheers to you, you trivia guru!</h4>
+            {points > 1 || points < 1 ? <h4>You scored {points} points!</h4> : 
+              <h4>You scored 1 point!</h4>}
             <p>Want to go another round?</p>
                 <Button 
                     onClick={()=>handleScoreSave()}>
