@@ -17,22 +17,33 @@ function QuestionCard({ q, handleNextQ, num, qNum }) {
         }
     }
 
+    function formatString(string) {
+        return string.replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&gt;/g, '>').replace(/&lt;/g, '<')
+        .replace(/&apos;/g, "'").replace(/&ldquo;/g, '"').replace(/&rdquo;/g, '"').replace(/&#039;/g, "'")
+    }
+    
     // Wait for incorrect answers to load before continuing...
     if (incorrect_answers) {
         // console.log("incorrect answers: ", incorrect_answers)
         const options = shuffle([...incorrect_answers, correct_answer])
-        // if (num === id) {
+        const formattedOptions = []
+        options.forEach(el => {
+            formattedOptions.push(formatString(el))
+        })
+        const formattedQuestion = formatString(question)
+        
         if (num === qNum) {
             return (
                 <div className="question" key={id}>
-                    <h4>{question}</h4>
+                    <h4>{formattedQuestion}</h4>
                     <ul className="options">
-                    {options.map((item, index)=> (
+                    {formattedOptions.map((item, index)=> (
                         <li>
                             <Button 
                                 key={index} 
                                 name={item}
-                                onClick={(e)=>handleClick(e)}>{item}</Button>
+                                onClick={(e)=>handleClick(e)}>{item}
+                            </Button>
                         </li>
                     ))}
                     </ul>

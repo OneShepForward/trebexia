@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
 import './styles/App.css';
+import trebexia_logo from './trebexia_logo.png';
 import ScoreCard from "./ScoreCard";
 
 function Scores({ api_url }) {
     const [scores, setScores] = useState([]);
     const [allScores, setAllScores] = useState([])
     const [scoreSort, setScoreSort] = useState(0);
+    const [isRendered, setRendered] = useState(false);
 
     function handleSort(e) {
       setScoreSort(parseInt(e.target.value))
-      // console.log("value: ", e.target.value)
-      // console.log("scoreSort: ", scoreSort)
-      // const test_array = [...scores]
-      // console.log("test: ", test_array[0].game.id)
       if ((parseInt(e.target.value)) === 0) {
         const sortedScores = [...allScores].sort()
         setScores(sortedScores)
@@ -38,20 +36,39 @@ function Scores({ api_url }) {
         fetch(`${api_url}/scores`).then((response) => {
           if (response.ok) {
             response.json().then((scores) => {
-              console.log("scores: ", scores);
+              // console.log("scores: ", scores);
               setAllScores(scores);
               setScores(scores);
+
+                // setRendered here when deploying and comment out from 
+                // const timer to clearInterval
+
+                // setRendered(true)
             });
           } else {
             response.json().then((error) => console.log(error))
           }
         });
+
+         // Use this code to simulate loading time
+         const timer = setTimeout(() => {
+          setRendered(true);
+      }, 2000);
+
+      //cleanup function 
+      return function cleanup() {
+          console.log("Running cleanup");
+          // ✅ clear the interval so state is no longer updated
+          clearInterval(timer);
+          };
+
       }, []);
 
 
     return (
       <div className="table">
           <h2>Top Scores</h2>
+          { isRendered ? 
             <table className="table">
               <thead>
                 <tr>
@@ -69,6 +86,12 @@ function Scores({ api_url }) {
                   </tr>)}
               </tbody>
             </table>
+              :
+              <div>
+                <img src={trebexia_logo} alt="logo" className="App-logo"/> <br/>
+              </div>
+              
+              }
 
             <label id="label" className="label">See high scores by game: </label>
             <select id="select-game" onChange={handleSort} value={scoreSort} className="dropdown">
