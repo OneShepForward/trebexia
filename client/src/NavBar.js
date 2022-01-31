@@ -17,7 +17,7 @@ function NavBar({ user, onLogin, onLogout, api_url }) {
 
 
 function handleLogout(e) {
-    fetch(`${api_url}/logout`, {
+    fetch(`/logout`, {
         method: "DELETE",
       }).then(() => onLogout());
 }

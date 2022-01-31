@@ -31,7 +31,7 @@ function Game ({ api_url, handleEnd, sortBy }) {
     let gameNum = parseInt(sortBy);
 
     useEffect(() => {
-        fetch(`${api_url}/game_to_render/${gameNum}`).then((response) => {
+        fetch(`/game_to_render/${gameNum}`).then((response) => {
           if (response.ok) {
             response.json().then((question_array) => {
                 setQuestions(question_array)

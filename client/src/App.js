@@ -8,11 +8,14 @@ function App() {
 
   // comment in the api_url that you're using
   // const api_url = "http://127.0.0.1:3000"
-  const api_url = "https://morganick.herokuapp.com" 
+  // const api_url = "https://morganick.herokuapp.com" 
+
+  // to change proxy endpoint for fetch urls, change the
+  // "proxy": "http://127.0.0.1:3000", in the package.json file
 
 
   useEffect(() => {
-    fetch(`${api_url}/me`).then((response) => 
+    fetch(`/me`).then((response) => 
     {
       if (response.ok) {
         response.json().then((user) => {
@@ -32,7 +35,7 @@ function App() {
   function handleLogin(user) {
     console.log("sign up ", user)
     setUser(user);
-    window.location.assign(`https://morganick.herokuapp.com`)
+    // window.location.assign(`https://morganick.herokuapp.com`)
   }
 
   function handleLogout() {
@@ -45,7 +48,7 @@ function App() {
           <NavBar  
             user={user} 
             onLogin={handleLogin} 
-            api_url = {api_url} 
+            // api_url = {api_url} 
             onLogout={handleLogout}
           />
         </div>

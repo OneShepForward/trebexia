@@ -12,7 +12,7 @@ function Signup({ onLogin, api_url }) {
     function handleSubmit(e) {
         e.preventDefault();
         // users/create route
-        fetch(`${api_url}/users`, {
+        fetch(`/users`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

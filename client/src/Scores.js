@@ -33,7 +33,7 @@ function Scores({ api_url }) {
     
 
     useEffect(() => {
-        fetch(`${api_url}/scores`).then((response) => {
+        fetch(`/scores`).then((response) => {
           if (response.ok) {
             response.json().then((scores) => {
               // console.log("scores: ", scores);
