@@ -10,7 +10,7 @@ function Login({ onLogin, api_url }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`${api_url}/login_the_user`, {
+        fetch(`/login_the_user`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
