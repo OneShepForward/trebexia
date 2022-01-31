@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import QuestionCard from "./QuestionCard";
 import GameOver from "./GameOver";
 
-import Button from "./Button";
+// import Button from "./Button";
 
 
 
@@ -61,7 +61,14 @@ function Game ({ api_url, handleEnd, sortBy }) {
         </div>
     )
     } else {
-      return (<GameOver handleEnd={handleEnd}/>)
+      return (
+        <GameOver 
+          handleEnd={handleEnd}
+          points = {points}
+          gameNum = {gameNum}
+          api_url = {api_url}
+        />
+      )
     }
 
 
