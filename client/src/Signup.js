@@ -22,14 +22,15 @@ function Signup({ onLogin, api_url }) {
           }),
         }).then((r) => {
           if (r.ok) {
-            r.json().then((user) => onLogin(user));
-            // r.json().then((user) => console.log(user));
+            r.json().then((user) => {
+              onLogin(user)
+            });
+          }
+          else {
+            r.json().then((errors) => console.log(errors));
           }
         });
       }
-
-    //   console.log("username:", username, "password:", password)
-      console.log("username:", username, "password:", password, "conf:", passwordConfirmation)
   
     return (
       <form onSubmit={handleSubmit}>

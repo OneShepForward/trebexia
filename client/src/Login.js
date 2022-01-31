@@ -2,19 +2,10 @@ import React, { useState } from "react";
 import './styles/App.css';
 import Button from "./Button";
 
+
 function Login({ onLogin, api_url }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
-
-    // When submitting the login using onLogin, I kept getting error:
-    // Login.js:29 Uncaught (in promise) TypeError: onLogin is not a function
-    // at Login.js:29:1. Made this to debug.
-
-    function testFunc(variable) {
-      // console.log(variable)
-      onLogin(variable)
-    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -29,8 +20,9 @@ function Login({ onLogin, api_url }) {
          }),
         }).then((r) => {
           if (r.ok) {
-            // r.json().then((user) => onLogin(user));
-            r.json().then((user) => testFunc(user));
+            r.json().then((user) => {
+              onLogin(user);
+            });
           }
           else {
             r.json().then((errors) => console.log(errors));
