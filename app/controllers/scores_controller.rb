@@ -2,7 +2,7 @@ class ScoresController < ApplicationController
     skip_before_action :authorize
 
     def index 
-        scores = Score.all
+        scores = Score.all.order(score: :desc)
         render json: scores 
     end
 
