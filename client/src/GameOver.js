@@ -4,7 +4,6 @@ import Button from "./Button";
 
 function GameOver({ handleEnd, points, gameNum, api_url }) {
 
-  console.log(points)
     function handleGameOver() {
         // console.log(handleEnd)
         handleEnd(false);

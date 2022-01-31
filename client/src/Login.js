@@ -6,6 +6,7 @@ import Button from "./Button";
 function Login({ onLogin, api_url }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [errorState, setErrorState] = useState(null)
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -22,16 +23,18 @@ function Login({ onLogin, api_url }) {
           if (r.ok) {
             r.json().then((user) => {
               onLogin(user);
+              setErrorState(null);
             });
           }
           else {
-            r.json().then((errors) => console.log(errors));
+            r.json().then((errors) => {
+              console.log(errors);
+              setErrorState(errors);
+            });
           }
         });
       }
 
-      console.log("username:", username, "password:", password)
-      // console.log("username:", username)
   
     return (
       <form onSubmit={handleSubmit}>
@@ -51,7 +54,8 @@ function Login({ onLogin, api_url }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <br></br>
+        <br/>
+        {errorState ? <p class="error">{errorState.error}</p> : null}
         <Button type="submit">Login</Button>
       </form>
     );
