@@ -30,7 +30,9 @@ function App() {
   }, []);
 
   function handleLogin(user) {
+    console.log("sign up ", user)
     setUser(user);
+    window.location.assign(`https://morganick.herokuapp.com`)
   }
 
   function handleLogout() {

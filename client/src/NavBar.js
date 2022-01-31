@@ -9,8 +9,9 @@ import Home from './Home';
 import {
     Switch,
     Route,
-    Link
+    Link,
 } from "react-router-dom";
+
 
 function NavBar({ user, onLogin, onLogout, api_url }) {
 
@@ -20,6 +21,8 @@ function handleLogout(e) {
         method: "DELETE",
       }).then(() => onLogout());
 }
+
+
 
     return (
     <div>
@@ -49,7 +52,6 @@ function handleLogout(e) {
                 api_url = {api_url}
                 user={user} 
                 onLogin={onLogin} 
-                onLogout={onLogout}
                 />
             </Route>
 
@@ -64,7 +66,6 @@ function handleLogout(e) {
                 api_url = {api_url}
                 user={user} 
                 onLogin={onLogin} 
-                onLogout={onLogout}
                 />
             </Route>
 
@@ -73,7 +74,6 @@ function handleLogout(e) {
                 api_url = {api_url}
                 user={user}
                 onLogin={onLogin} 
-                onLogout={onLogout}
                 />
             </Route>
         </Switch>
