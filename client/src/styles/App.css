@@ -36,6 +36,11 @@ div {
   margin: .5em;
 }
 
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
 .scores-list {
   margin: 1em;
 }

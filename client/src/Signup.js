@@ -6,6 +6,8 @@ function Signup({ onLogin, api_url }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [errorState, setErrorState] = useState(null)
+
   
     function handleSubmit(e) {
         e.preventDefault();
@@ -24,10 +26,14 @@ function Signup({ onLogin, api_url }) {
           if (r.ok) {
             r.json().then((user) => {
               onLogin(user)
+              setErrorState(null);
             });
           }
           else {
-            r.json().then((errors) => console.log(errors));
+            r.json().then((errors) => {
+              console.log(errors)
+              setErrorState(errors)
+            });
           }
         });
       }
@@ -58,8 +64,9 @@ function Signup({ onLogin, api_url }) {
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
-        <br></br>
-        <Button type="submit">Signup</Button>
+        <br/>
+        {errorState ? errorState.error.map(e => <p class="error">{e}</p>) : null}
+        <Button type="submit" class="test123">Signup</Button>
       </form>
     );
 }
