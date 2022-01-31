@@ -13,10 +13,19 @@ function Game ({ api_url, handleEnd, sortBy }) {
     const [points, setPoints] = useState(0);
     const [questions, setQuestions] = useState([]);
     const [isRendered, setRendered] = useState(false);
+    const [isGreen, setGreen] = useState("")
 
     function handleNextQ(pts) {
+      if (pts > 0) {
       setPoints(points + pts);
+      handleCorrect()
+    }
       setNum(num + 1);
+    }
+
+    function handleCorrect() {
+      // It switches from green to green2 so state doesn't have to rerender when green flash is over
+      isGreen === "green" ? setGreen("green2") : setGreen("green")
     }
 
     let gameNum = parseInt(sortBy);
@@ -74,7 +83,7 @@ function Game ({ api_url, handleEnd, sortBy }) {
           <div className="question">
               <h2>Question {num} of 7</h2> 
               {renderQuestions()}
-              <h2>Points: {points}</h2> 
+              <h2 className={`${isGreen}`}>Points: {points}</h2> 
           </div>
       )
       } else {

@@ -57,6 +57,43 @@ div {
   box-sizing: border-box;
 }
 
+.green {
+  animation: flash-green 1 1s;
+}
+
+@keyframes flash-green {
+  0% {
+    color: #34495e;
+    text-shadow: nil;
+  }
+  50% {
+    color: green;
+    text-shadow: lawngreen;
+  }
+  100% {
+    color: #34495e;
+    text-shadow: nil;
+  }
+}
+
+.green2 {
+  animation: flash-green2 1 1s;
+}
+
+@keyframes flash-green2 {
+  0% {
+    color: #34495e;
+    text-shadow: nil;
+  }
+  50% {
+    color: green;
+    text-shadow: lawngreen;
+  }
+  100% {
+    color: #34495e;
+    text-shadow: nil;
+  }
+}
 
 /* Mobile first queries */
 
