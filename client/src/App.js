@@ -11,11 +11,8 @@ function App() {
   const api_url = "https://morganick.herokuapp.com" 
 
 
-  // THIS WOULD BE TO HAVE USER INFO SAVED IN SESSION
   useEffect(() => {
-    // Does this need to just be "/me" for the fetch? Hmmm....
     fetch(`${api_url}/me`).then((response) => 
-    // console.log(response)
     {
       if (response.ok) {
         response.json().then((user) => {
@@ -34,7 +31,6 @@ function App() {
 
   function handleLogin(user) {
     setUser(user);
-    // console.log(user)
   }
 
   function handleLogout() {
