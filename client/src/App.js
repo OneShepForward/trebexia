@@ -7,8 +7,8 @@ function App() {
   const [user, setUser] = useState(null);
 
   // comment in the api_url that you're using
-  // const api_url = "http://127.0.0.1:3000"
-  const api_url = "https://morganick.herokuapp.com" 
+  const api_url = "http://127.0.0.1:3000"
+  // const api_url = "https://morganick.herokuapp.com" 
 
 
   useEffect(() => {
