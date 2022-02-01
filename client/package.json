@@ -2,7 +2,7 @@
   "name": "react-rails-api-project-template-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://morganick.herokuapp.com/",
+  "proxy": "https://trebexia.herokuapp.com/",
   "engines": {
     "node": "16.x"
   },
