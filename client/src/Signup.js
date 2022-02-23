@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './styles/App.css';
 import Button from "./Button";
 
-function Signup({ onLogin, api_url }) {
+function Signup({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");

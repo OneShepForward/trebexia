@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import './styles/App.css';
 import trebexia_logo from './trebexia_logo.png';
-import ScoreCard from "./ScoreCard";
 
-function Scores({ api_url }) {
+function Scores() {
     const [scores, setScores] = useState([]);
     const [allScores, setAllScores] = useState([])
     const [scoreSort, setScoreSort] = useState(0);
@@ -15,7 +14,6 @@ function Scores({ api_url }) {
         const sortedScores = [...allScores].sort()
         setScores(sortedScores)
       } else {
-      // const sortedScores = [...scores].filter(score => score.game.id === scoreSort)
         const sortedScores = [...allScores].filter(score => score.game.id === parseInt(e.target.value))
         setScores(sortedScores)
       }
@@ -36,7 +34,6 @@ function Scores({ api_url }) {
         fetch(`/scores`).then((response) => {
           if (response.ok) {
             response.json().then((scores) => {
-              // console.log("scores: ", scores);
               setAllScores(scores);
               setScores(scores);
 
@@ -50,7 +47,8 @@ function Scores({ api_url }) {
           }
         });
 
-         // Use this code to simulate loading time
+// -- To prevent coded in load time, comment out this block of code
+// !!! But don't forget to comment in the setRendered(true) above!!!
          const timer = setTimeout(() => {
           setRendered(true);
       }, 2000);
@@ -61,6 +59,7 @@ function Scores({ api_url }) {
           // ✅ clear the interval so state is no longer updated
           clearInterval(timer);
           };
+// -- ^^ To prevent coded in load time, comment out this block of code ^^
 
       }, []);
 
@@ -81,7 +80,6 @@ function Scores({ api_url }) {
                 {scores.map(s => <tr>
                   <td>{s.user.username}</td>
                   <td>{s.score}</td>
-                  {/* gameCategories object created to populate names */}
                   <td>{gameCategories[s.game.id]}</td>
                   </tr>)}
               </tbody>

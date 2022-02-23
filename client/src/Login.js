@@ -3,7 +3,7 @@ import './styles/App.css';
 import Button from "./Button";
 
 
-function Login({ onLogin, api_url }) {
+function Login({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errorState, setErrorState] = useState(null)

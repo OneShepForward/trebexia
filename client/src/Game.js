@@ -3,11 +3,7 @@ import QuestionCard from "./QuestionCard";
 import GameOver from "./GameOver";
 import trebexia_logo from './trebexia_logo.png';
 
-// import Button from "./Button";
-
-
-
-function Game ({ api_url, handleEnd, sortBy }) {
+function Game ({ handleEnd, sortBy }) {
 
     const [num, setNum] = useState(1);
     const [points, setPoints] = useState(0);
@@ -24,6 +20,7 @@ function Game ({ api_url, handleEnd, sortBy }) {
     }
 
     function handleCorrect() {
+      // This makes the CSS flash the text green after correct reponse
       // It switches from green to green2 so state doesn't have to rerender when green flash is over
       isGreen === "green" ? setGreen("green2") : setGreen("green")
     }
@@ -46,7 +43,9 @@ function Game ({ api_url, handleEnd, sortBy }) {
           }
         });
 
-          // Use this code to simulate loading time
+
+// -- To prevent coded in load time, comment out this block of code
+// !!! But don't forget to comment in the setRendered(true) above!!!
           const timer = setTimeout(() => {
             setRendered(true);
         }, 2000);
@@ -54,15 +53,15 @@ function Game ({ api_url, handleEnd, sortBy }) {
         //cleanup function 
         return function cleanup() {
             console.log("Running cleanup");
-            // ✅ clear the interval so state is no longer updated
+            // clear the interval so state is no longer updated
             clearInterval(timer);
             };
+// -- ^^ To prevent coded in load time, comment out this block of code ^^
 
       }, []);
 
     function renderQuestions() {
       let questionNumber = 0
-        // console.log("renderQuestion hit", questions)
         return Object.values(questions).map(q => {
           questionNumber += 1
           return <div className="question" key={q.id}>
@@ -92,7 +91,6 @@ function Game ({ api_url, handleEnd, sortBy }) {
             handleEnd={handleEnd}
             points = {points}
             gameNum = {gameNum}
-            api_url = {api_url}
           />
         )
       }
