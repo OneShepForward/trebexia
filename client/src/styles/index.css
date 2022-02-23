@@ -1,6 +1,20 @@
+@font-face {
+  font-family: 'Harlow Solid Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Harlow Solid Italic'), url('./HARLOWSI_1.woff') format('woff');
+  }
+  
+@font-face{
+  font-family: 'Gyparody';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gyparody'), url('./gyparody\ rg.ttf') format('ttf');
+  }
+
 body {
   margin: .5em;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Harlow Solid Italic', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
