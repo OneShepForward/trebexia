@@ -29,10 +29,13 @@ h2 {
   padding: 10px
 }
 
-
 div {
   margin-bottom: 1em;
   text-align: center;
+}
+
+#select-game {
+  font-size: large;
 }
 
 .question {
