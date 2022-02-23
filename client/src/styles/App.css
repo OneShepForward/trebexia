@@ -19,6 +19,9 @@ h1, h4 {
 }
 
 h1.logo {
+  /* font-family: "Harlow Solid Italic"; */
+  font-family: "Gyparody";
+  font-weight: lighter;
   font-size: 10vw;
 }
 
