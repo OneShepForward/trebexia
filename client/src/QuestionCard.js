@@ -24,7 +24,6 @@ function QuestionCard({ q, handleNextQ, num, qNum }) {
     
     // Wait for incorrect answers to load before continuing...
     if (incorrect_answers) {
-        // console.log("incorrect answers: ", incorrect_answers)
         const options = shuffle([...incorrect_answers, correct_answer])
         const formattedOptions = []
         options.forEach(el => {

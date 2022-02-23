@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 
 
-function NavBar({ user, onLogin, onLogout, api_url }) {
+function NavBar({ user, onLogin, onLogout }) {
 
 
 function handleLogout(e) {
@@ -36,7 +36,6 @@ function handleLogout(e) {
             </Link> 
 
             <ul className="main-nav">
-            {/* <Link to="/"><a href="/">Home</a></Link> */}
             <Link to="/">Home</Link>
             <Link to="/high_scores">Scores</Link>
             {/* Displays Login and Sign up if there is not active user and Logout if there is */}
@@ -49,7 +48,6 @@ function handleLogout(e) {
         <Switch>
             <Route path="/login">
                 <Login 
-                api_url = {api_url}
                 user={user} 
                 onLogin={onLogin} 
                 />
@@ -57,13 +55,11 @@ function handleLogout(e) {
 
             <Route path="/high_scores">
                 <Scores
-                api_url = {api_url}
                 />
             </Route>
 
             <Route path="/signup">
                 <Signup 
-                api_url = {api_url}
                 user={user} 
                 onLogin={onLogin} 
                 />
@@ -71,7 +67,6 @@ function handleLogout(e) {
 
             <Route exact path="/">
                 <Home
-                api_url = {api_url}
                 user={user}
                 onLogin={onLogin} 
                 />

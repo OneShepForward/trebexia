@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "./Button";
 
 
-function GameOver({ handleEnd, points, gameNum, api_url }) {
+function GameOver({ handleEnd, points, gameNum }) {
 
     function handleGameOver() {
-        // console.log(handleEnd)
         handleEnd(false);
     }
 
@@ -17,7 +16,7 @@ function GameOver({ handleEnd, points, gameNum, api_url }) {
               score: points
            };
       
-          fetch(`${api_url}/scores`, {
+          fetch(` /scores`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

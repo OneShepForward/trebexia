@@ -8,7 +8,7 @@ const btnCSS = css`
 `;
 
 
-function Start ({ handleStart, user, onLogin, onLogout, handleSort, sortBy  }) {
+function Start ({ handleStart, handleSort, sortBy  }) {
 
     const startQuiz = () => handleStart(true)
 
@@ -36,11 +36,6 @@ function Start ({ handleStart, user, onLogin, onLogout, handleSort, sortBy  }) {
                 <option value="9">Sports</option>
                 <option value="10">History</option>
             </select>
-
-            {/* { user ? 
-                <h4>Welcome, {user.username}!</h4> :
-                <h4>Create a login</h4>
-            } */}
             <br/>
             <Button onClick={startQuiz} css={btnCSS}>Begin</Button>
 

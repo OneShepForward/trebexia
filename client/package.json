@@ -2,7 +2,7 @@
   "name": "react-rails-api-project-template-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://trebexia.herokuapp.com/",
+  "proxy": "http://127.0.0.1:3000",
   "engines": {
     "node": "16.x"
   },

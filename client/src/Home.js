@@ -7,7 +7,6 @@ import Game from './Game';
 function Home({ user, onLogin, onLogout, api_url }) {
     const [start, setStart] = useState(false);
     const [sortBy, setSortBy] = useState("1");
-    // const [sortBy, setSortBy] = useState("Option 1");
 
     
     function handleSort(dropdown) {
