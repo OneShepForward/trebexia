@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import './styles/App.css';
 import Button from "./Button";
+import { useHistory } from "react-router-dom";
 
 
 function Login({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errorState, setErrorState] = useState(null)
+
+    let history = useHistory();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -24,6 +27,7 @@ function Login({ onLogin }) {
             r.json().then((user) => {
               onLogin(user);
               setErrorState(null);
+              history.push("/");
             });
           }
           else {
