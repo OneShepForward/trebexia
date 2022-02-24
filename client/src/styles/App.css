@@ -34,8 +34,13 @@ div {
   text-align: center;
 }
 
-#select-game {
+#select-game, #username {
   font-size: large;
+}
+
+#password, #password_confirmation {
+  font-size: large;
+  margin-top: .5em;
 }
 
 .question {
