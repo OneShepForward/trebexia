@@ -42,23 +42,25 @@ function Login({ onLogin }) {
     return (
       <form onSubmit={handleSubmit}>
         <h2>Login</h2>
-        <label id="username">Username: </label>
+        {/* <label id="username-label">Username: </label> */}
         <input
           type="text"
           id="username"
+          placeholder=" Username..."
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <br/>
-        <label id="password">Password: </label>
+        {/* <label id="password-label">Password: </label> */}
         <input
           type="password"
           id="password"
+          placeholder=" Password..."
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <br/>
-        {errorState ? <p class="error">{errorState.error}</p> : null}
+        {errorState ? <p className="error">{errorState.error}</p> : null}
         <Button type="submit">Login</Button>
       </form>
     );

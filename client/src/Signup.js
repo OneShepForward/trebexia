@@ -35,7 +35,6 @@ function Signup({ onLogin }) {
           }
           else {
             r.json().then((errors) => {
-              console.log(errors)
               setErrorState(errors)
             });
           }
@@ -45,32 +44,32 @@ function Signup({ onLogin }) {
     return (
       <form onSubmit={handleSubmit}>
         <h2>Signup</h2>
-        <label id="username">Username: </label>
         <input
           type="text"
           id="username"
+          placeholder=" Username..."
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <br/>
-        <label id="password">Password: </label>
         <input
           type="password"
           id="password"
+          placeholder=" Password..."
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <br></br>
-        <label id="password_confirmation">Confirm Password: </label>
+        <br/>
         <input
           type="password"
           id="password_confirmation"
+          placeholder=" Confirm Password..."
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
         <br/>
-        {errorState ? errorState.error.map(e => <p class="error">{e}</p>) : null}
-        <Button type="submit" class="test123">Signup</Button>
+        {errorState ? errorState.error.map(e => <p className="error" key={Math.random()}>{e}</p>) : null}
+        <Button type="submit">Signup</Button>
       </form>
     );
 }

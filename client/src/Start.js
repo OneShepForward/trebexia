@@ -37,6 +37,7 @@ function Start ({ handleStart, handleSort, sortBy  }) {
                 <option value="10">History</option>
             </select>
             <br/>
+            <br/>
             <Button onClick={startQuiz} css={btnCSS}>Begin</Button>
 
         </div>
