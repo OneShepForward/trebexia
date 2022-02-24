@@ -29,10 +29,10 @@ function handleLogout(e) {
         <header className="header">
         <nav>
             <Link to="/">
-            <h1 class="logo">Trebexia Trivia</h1>
+            <h1 className="logo">Trebexia Trivia</h1>
             </Link>
             <Link to="/">
-                {user ? <h4 class="welcome">Welcome, {user.username}!</h4> : <h4>Please sign up or sign in</h4>}
+                {user ? <h4 className="welcome">Welcome, {user.username}!</h4> : <h4>Please sign up or sign in</h4>}
             </Link> 
 
             <ul className="main-nav">
@@ -40,7 +40,7 @@ function handleLogout(e) {
             <Link to="/high_scores">Scores</Link>
             {/* Displays Login and Sign up if there is not active user and Logout if there is */}
             {user ? <></> : <Link to="/login">Login</Link> }
-            {user ? <a onClick={(e)=>handleLogout(e)}>Log out</a> : <Link to="/signup">Sign Up</Link> }            
+            {user ? <Link to="/" onClick={(e)=>handleLogout(e)}>Log out</Link> : <Link to="/signup">Sign Up</Link> }            
             </ul>
         </nav>        
         </header> 

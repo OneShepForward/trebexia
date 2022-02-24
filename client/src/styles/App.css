@@ -101,6 +101,69 @@ div {
   }
 }
 
+.red {
+  animation: shake-red 1 1s;
+}
+
+@keyframes shake-red {
+  0% { transform: translate(5px,0px); }
+  10% { transform: translate(-5px,0px ) ; }
+  20% { transform: translate(4px,0px); }
+  30% { transform: translate(-4px,0px); }
+  40% { transform: translate(3px, 0px); }
+  50% { transform: translate(-3px,0px) ; }
+  60% { transform: translate(2px,0px); }
+  70% { transform: translate(-2px,0px) ; }
+  80% { transform: translate(1px,0px ); }
+  90% { transform: translate(-1px,0px); }
+  100% { transform: translate(0px,0px ) ; }
+
+  0% {
+    color: #34495e;
+    text-shadow: nil;
+  }
+  50% {
+    color: red;
+    text-shadow: rgb(255, 73, 73);
+  }
+  100% {
+    color: #34495e;
+    text-shadow: nil;
+  }
+}
+
+.red2 {
+  animation: shake-red2 1 1s;
+}
+
+@keyframes shake-red2 {
+  0% { transform: translate(5px,0px); }
+  10% { transform: translate(-5px,0px ) ; }
+  20% { transform: translate(4px,0px); }
+  30% { transform: translate(-4px,0px); }
+  40% { transform: translate(3px, 0px); }
+  50% { transform: translate(-3px,0px) ; }
+  60% { transform: translate(2px,0px); }
+  70% { transform: translate(-2px,0px) ; }
+  80% { transform: translate(1px,0px ); }
+  90% { transform: translate(-1px,0px); }
+  100% { transform: translate(0px,0px ) ; }
+
+  0% {
+    color: #34495e;
+    text-shadow: nil;
+  }
+  50% {
+    color: red;
+    text-shadow: rgb(255, 73, 73);
+  }
+  100% {
+    color: #34495e;
+    text-shadow: nil;
+  }
+}
+
+
 /* Mobile first queries */
 
 /* Larger than mobile */

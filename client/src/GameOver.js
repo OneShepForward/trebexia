@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 
 
 function GameOver({ handleEnd, points, gameNum }) {
+
+  const [saveSuccess, setSaveSuccess] = useState(false)
+  const [saveFailure, setSaveFailure] = useState(false)
 
     function handleGameOver() {
         handleEnd(false);
     }
 
     function handleScoreSave() {
-        console.log("Save score")      
       
           const newScore = { 
               game_id: gameNum,
@@ -22,12 +24,19 @@ function GameOver({ handleEnd, points, gameNum }) {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(newScore),
+          }).then((r) => {
+            if (r.ok) {
+              r.json().then(() => {
+                setSaveSuccess(true)
+              });
+            } else {
+              r.json().then(() => {
+                setSaveFailure(true)
+              })
+            }
           })
-            .then((r) => r.json())
-            .then((newScore) => {
-              console.log(newScore);
-            });
         }
+         
 
     return (
         <div>
@@ -39,6 +48,8 @@ function GameOver({ handleEnd, points, gameNum }) {
                     Save your score!
                 </Button>
                 <br/>
+                {saveSuccess ? <h4 className="green">Score saved!</h4> : <></>}
+                {saveFailure ? <h4 className="red">You must be logged in to save.</h4> : <></>}
                 <Button 
                     onClick={()=>handleGameOver()}>
                     <a href="/">Play Again?</a>

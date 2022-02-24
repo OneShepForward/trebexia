@@ -20,7 +20,6 @@ function App() {
   }, []);
 
   function handleLogin(user) {
-    console.log("sign up ", user)
     setUser(user);
   }
 
