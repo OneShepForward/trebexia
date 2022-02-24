@@ -10,7 +10,7 @@ function QuestionCard({ q, handleNextQ, num, qNum }) {
 
     function handleClick(e) {
         if (e.target.name === formatString(correct_answer)) {
-            //if we decide to have point values based on question difficulty we can add that in here to have easy = 1, medium = 2, hard =3 
+            //if we decide to have point values based on question difficulty we can add that in here to have easy = 1, medium = 2, hard =3
             handleNextQ(1);
         } else {
             handleNextQ(0);
@@ -37,7 +37,7 @@ function QuestionCard({ q, handleNextQ, num, qNum }) {
                     <h4>{formattedQuestion}</h4>
                     <ul className="options">
                     {formattedOptions.map((item, index)=> (
-                        <li>
+                        <li key={index}>
                             <Button 
                                 key={index} 
                                 name={item}

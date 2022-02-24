@@ -9,26 +9,35 @@ function Game ({ handleEnd, sortBy }) {
     const [points, setPoints] = useState(0);
     const [questions, setQuestions] = useState([]);
     const [isRendered, setRendered] = useState(false);
-    const [isGreen, setGreen] = useState("")
+    const [pointsClass, setPointsClass] = useState("")
 
     function handleNextQ(pts) {
       if (pts > 0) {
-      setPoints(points + pts);
-      handleCorrect()
-    }
+        handleCorrect()
+        setPoints(points + pts);
+      } else {
+        handleIncorrect()
+      }
       setNum(num + 1);
     }
-
+    
     function handleCorrect() {
       // This makes the CSS flash the text green after correct reponse
-      // It switches from green to green2 so state doesn't have to rerender when green flash is over
-      isGreen === "green" ? setGreen("green2") : setGreen("green")
+      // It toggles from green to green2 in case of consecutive corrects
+      pointsClass === "green" ? setPointsClass("green2") : setPointsClass("green")
+    }
+    
+    function handleIncorrect() {
+      // This makes the CSS flash red after incorrect reponse
+      // It switches from red to red2 in case of consecutive incorrects
+      pointsClass === "red" ? setPointsClass("red2") : setPointsClass("red")
     }
 
     let gameNum = parseInt(sortBy);
 
     useEffect(() => {
-        fetch(`/game_to_render/${gameNum}`).then((response) => {
+        const current_game_number = gameNum
+        fetch(`/game_to_render/${current_game_number}`).then((response) => {
           if (response.ok) {
             response.json().then((question_array) => {
                 setQuestions(question_array)
@@ -82,7 +91,7 @@ function Game ({ handleEnd, sortBy }) {
           <div className="question">
               <h2>Question {num} of 7</h2> 
               {renderQuestions()}
-              <h2 className={`${isGreen}`}>Points: {points}</h2> 
+              <h2 className={`${pointsClass}`}>Points: {points}</h2> 
           </div>
       )
       } else {

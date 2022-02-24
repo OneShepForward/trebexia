@@ -40,7 +40,7 @@ function handleLogout(e) {
             <Link to="/high_scores">Scores</Link>
             {/* Displays Login and Sign up if there is not active user and Logout if there is */}
             {user ? <></> : <Link to="/login">Login</Link> }
-            {user ? <a onClick={(e)=>handleLogout(e)}>Log out</a> : <Link to="/signup">Sign Up</Link> }            
+            {user ? <Link to="/" onClick={(e)=>handleLogout(e)}>Log out</Link> : <Link to="/signup">Sign Up</Link> }            
             </ul>
         </nav>        
         </header> 

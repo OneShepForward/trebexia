@@ -32,7 +32,6 @@ function Login({ onLogin }) {
           }
           else {
             r.json().then((errors) => {
-              console.log(errors);
               setErrorState(errors);
             });
           }
