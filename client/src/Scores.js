@@ -77,7 +77,7 @@ function Scores() {
                 </tr>
               </thead>
               <tbody>
-                {scores.map(s => <tr>
+                {scores.map(s => <tr key={s.id}>
                   <td>{s.user.username}</td>
                   <td>{s.score}</td>
                   <td>{gameCategories[s.game.id]}</td>

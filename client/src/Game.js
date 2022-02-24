@@ -36,8 +36,7 @@ function Game ({ handleEnd, sortBy }) {
     let gameNum = parseInt(sortBy);
 
     useEffect(() => {
-        const current_game_number = gameNum
-        fetch(`/game_to_render/${current_game_number}`).then((response) => {
+        fetch(`/game_to_render/${gameNum}`).then((response) => {
           if (response.ok) {
             response.json().then((question_array) => {
                 setQuestions(question_array)
@@ -67,7 +66,7 @@ function Game ({ handleEnd, sortBy }) {
             };
 // -- ^^ To prevent coded in load time, comment out this block of code ^^
 
-      }, []);
+      }, [gameNum]);
 
     function renderQuestions() {
       let questionNumber = 0

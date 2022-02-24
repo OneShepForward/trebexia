@@ -4,7 +4,7 @@ import Start from './Start';
 import Game from './Game';
 
 
-function Home({ user, onLogin, onLogout, api_url }) {
+function Home({ user, onLogin, onLogout }) {
     const [start, setStart] = useState(false);
     const [sortBy, setSortBy] = useState("1");
 
@@ -20,7 +20,6 @@ function Home({ user, onLogin, onLogout, api_url }) {
             <Game 
                 handleEnd={setStart} 
                 sortBy={sortBy} 
-                api_url={api_url}
             /> 
             : 
             <Start 

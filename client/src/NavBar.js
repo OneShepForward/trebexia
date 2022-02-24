@@ -29,10 +29,10 @@ function handleLogout(e) {
         <header className="header">
         <nav>
             <Link to="/">
-            <h1 class="logo">Trebexia Trivia</h1>
+            <h1 className="logo">Trebexia Trivia</h1>
             </Link>
             <Link to="/">
-                {user ? <h4 class="welcome">Welcome, {user.username}!</h4> : <h4>Please sign up or sign in</h4>}
+                {user ? <h4 className="welcome">Welcome, {user.username}!</h4> : <h4>Please sign up or sign in</h4>}
             </Link> 
 
             <ul className="main-nav">
