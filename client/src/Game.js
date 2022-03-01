@@ -3,6 +3,9 @@ import QuestionCard from "./QuestionCard";
 import GameOver from "./GameOver";
 import trebexia_logo from './trebexia_logo.png';
 
+import correct from './audio/correct.mp3';
+import wrong from './audio/wrong.mp3';
+
 function Game ({ handleEnd, sortBy }) {
 
     const [num, setNum] = useState(1);
@@ -13,23 +16,25 @@ function Game ({ handleEnd, sortBy }) {
 
     function handleNextQ(pts) {
       if (pts > 0) {
-        handleCorrect()
-        setPoints(points + pts);
+        handleCorrect(pts)
       } else {
         handleIncorrect()
       }
       setNum(num + 1);
     }
     
-    function handleCorrect() {
+    function handleCorrect(pts) {
       // This makes the CSS flash the text green after correct reponse
       // It toggles from green to green2 in case of consecutive corrects
+      setPoints(points + pts);
+      new Audio(correct).play();
       pointsClass === "green" ? setPointsClass("green2") : setPointsClass("green")
     }
     
     function handleIncorrect() {
       // This makes the CSS flash red after incorrect reponse
       // It switches from red to red2 in case of consecutive incorrects
+      new Audio(wrong).play();
       pointsClass === "red" ? setPointsClass("red2") : setPointsClass("red")
     }
 
