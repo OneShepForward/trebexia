@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 
 import './styles/App.css';
-import './styles/HARLOWSI_1.woff';
 
 function App() {
   const [user, setUser] = useState(null);
