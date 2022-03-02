@@ -5,12 +5,16 @@
   src: local('Harlow Solid Italic'), url('./HARLOWSI_1.woff') format('woff');
   }
   
-@font-face{
-  font-family: 'Gyparody';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Gyparody'), url('./gyparody\ rg.ttf') format('ttf');
-  }
+  @font-face {
+    font-family: 'Gyparody';
+    src: url('GyparodyRg-Regular.woff2') format('woff2'),
+        url('GyparodyRg-Regular.woff') format('woff'),
+        url('GyparodyRg-Regular.ttf') format('truetype'),
+        url('GyparodyRg-Regular.svg#GyparodyRg-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
   margin: .5em;
