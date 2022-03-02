@@ -21,11 +21,12 @@ a {
 
 .main-nav {
 	margin-top: 5px;
+	width: 100%
 }
 
 .logo a,
 .main-nav a {
-	padding: 10px 15px;
+	padding: .25em .5em;
 	text-transform: uppercase;
 	text-align: center;
 }

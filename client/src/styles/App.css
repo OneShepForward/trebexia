@@ -18,11 +18,10 @@ h1, h4 {
   margin: .5em;
 }
 
-h1.logo {
-  /* font-family: "Harlow Solid Italic"; */
-  font-family: "Gyparody";
-  font-weight: lighter;
-  font-size: 10vw;
+.logo {
+width: 85%;
+margin-left: auto;
+margin-right: auto;
 }
 
 h2 {

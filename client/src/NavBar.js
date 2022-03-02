@@ -4,6 +4,7 @@ import Login from "./Login";
 import Scores from "./Scores";
 import Signup from "./Signup";
 import Home from './Home';
+import trebexia_header from './trebexia_header.png';
 
 
 import {
@@ -29,7 +30,8 @@ function handleLogout(e) {
         <header className="header">
         <nav>
             <Link to="/">
-            <h1 className="logo">Trebexia Trivia</h1>
+            {/* <h1 className="logo">Trebexia Trivia</h1> */}
+            <img src={trebexia_header} alt="Trebexia Trivia" className="logo"/>
             </Link>
             <Link to="/">
                 {user ? <h4 className="welcome">Welcome, {user.username}!</h4> : <h4>Please sign up or sign in</h4>}
