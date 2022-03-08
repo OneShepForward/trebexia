@@ -57,7 +57,8 @@ function Game ({ handleEnd, sortBy }) {
         });
 
 
-// -- To prevent coded in load time, comment out this block of code
+// -- To prevent coded in load time used to show off sweet animation, 
+//    comment out this block of code.
 // !!! But don't forget to comment in the setRendered(true) above!!!
           const timer = setTimeout(() => {
             setRendered(true);
