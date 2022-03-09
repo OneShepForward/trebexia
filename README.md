@@ -3,5 +3,8 @@
 <br/>
 Compete with your friends to see who the trivia master is!</h3>
 
+Demo: https://youtu.be/7oI2gfpg2tk
+Deployed at: https://trebexia.herokuapp.com/
+
 <br/><br/><br/>
 <p align="center">Thanks to <a href="https://opentdb.com/">Open Trivia Database</a> for providing questions for these quizzes.</p>
