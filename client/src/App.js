@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import NavBar from './NavBar';
+import React, { useState, useEffect } from "react";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
-import './styles/App.css';
+import "./styles/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch(`/me`).then((response) => 
-    {
+    fetch(`/me`).then((response) => {
       if (response.ok) {
         response.json().then((user) => {
-          setUser(user)
+          setUser(user);
         });
-      } 
-    }
-    );
+      }
+    });
   }, []);
 
   function handleLogin(user) {
@@ -27,16 +27,10 @@ function App() {
   }
 
   return (
-
-        <div className="App">
-          <NavBar  
-            user={user} 
-            onLogin={handleLogin} 
-            onLogout={handleLogout}
-          />
-        </div>
-
-
+    <div className="App">
+      <NavBar user={user} onLogin={handleLogin} onLogout={handleLogout} />
+      <Footer />
+    </div>
   );
 }
 
