@@ -5,7 +5,7 @@ import { Navbar, Image, Row, Col, Container, Nav } from "react-bootstrap";
 
 function Footer() {
   return (
-    <Navbar activeKey="/home">
+    <Navbar>
       <Container fluid>
         <Col>
           <Row>
@@ -14,7 +14,7 @@ function Footer() {
             </Navbar.Brand>
           </Row>
           <Row>
-            <p>
+            <p style={{ "color": "white" }}>
               <small>© 2022 Morganick Productions</small>
             </p>
           </Row>

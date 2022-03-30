@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles/NavBar.css";
 import Login from "./Login";
 import Scores from "./Scores";
 import Signup from "./Signup";

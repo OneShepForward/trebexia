@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter className="App">
+    <BrowserRouter >
       <NavBar user={user} onLogin={handleLogin} onLogout={handleLogout} />
       <Switch>
         <Route path="/login">
