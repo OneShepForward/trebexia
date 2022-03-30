@@ -43,7 +43,7 @@ function Login({ onLogin }) {
   return (
     <Container className="justify-content-center mt-5 mb-5">
     <Row className="mb-5">
-      <h3>Login or signup to save and share your high scores</h3>
+      <h3>Login or signup to save your scores</h3>
     </Row>
       <Row >
         <Col>
