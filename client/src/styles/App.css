@@ -60,13 +60,6 @@ div {
   margin: 1em;
 }
 
-.table {
-  text-align: center;
-  margin: .5em;
-  width: 100%;
-  box-sizing: border-box; 
-}
-
 .label {
   width: 100%;
   box-sizing: border-box;
