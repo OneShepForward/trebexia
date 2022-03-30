@@ -1,7 +1,7 @@
 import React from "react";
 import trebexia_icon from "./trebexia_icon_50x50.png";
 
-import { Navbar, Image, Row, Col, Container, Nav } from "react-bootstrap";
+import { Navbar, Image, Row, Col, Container } from "react-bootstrap";
 
 function Footer() {
   return (

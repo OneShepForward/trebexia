@@ -1,14 +1,7 @@
 import React from "react";
-import Login from "./Login";
-import Scores from "./Scores";
-import Signup from "./Signup";
-import Home from "./Home";
 import nav_logo from "./trebexia_footer400x50.png";
-import trebexia_header from "./trebexia_header.png";
 
-import { Switch, Route, Link } from "react-router-dom";
-
-import { Navbar, Image, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Image, Nav, Container } from "react-bootstrap";
 
 function NavBar({ user, onLogin, onLogout }) {
   function handleLogout(e) {

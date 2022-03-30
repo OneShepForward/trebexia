@@ -3,7 +3,7 @@ import "./styles/App.css";
 import Button from "./Button";
 import { useHistory } from "react-router-dom";
 
-import { Row, Co, Form, Container, Col } from "react-bootstrap";
+import { Row, Form, Container, Col } from "react-bootstrap";
 
 function Signup({ onLogin }) {
   const [username, setUsername] = useState("");
