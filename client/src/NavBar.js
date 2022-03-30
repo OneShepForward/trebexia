@@ -23,6 +23,7 @@ function NavBar({ user, onLogin, onLogout }) {
       <Container>
         <Navbar.Brand>
           <Image
+            href="/"
             src={nav_logo}
             alt="trebexia logo"
             className="nav-logo"
