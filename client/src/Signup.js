@@ -87,7 +87,7 @@ function Signup({ onLogin }) {
                   </p>
                 ))
               : null}
-            <Button type="submit">Signup</Button>
+            <Button className="mb-0" type="submit">Signup</Button>
           </Form>
         </Col>
       </Row>

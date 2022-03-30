@@ -41,8 +41,11 @@ function Login({ onLogin }) {
   }
 
   return (
-    <Container class="justify-content-center mt-4">
-      <Row>
+    <Container className="justify-content-center mt-5 mb-5">
+    <Row className="mb-5">
+      <h3>Login or signup to save and share your high scores</h3>
+    </Row>
+      <Row >
         <Col>
           <Form onSubmit={handleSubmit}>
             <h2>Login</h2>
@@ -67,12 +70,12 @@ function Login({ onLogin }) {
                 placeholder="Password"
               />
             </Form.Group>
-            <Button className="mb-3" variant="dark" type="submit">
+            <Button className="mb-0" variant="dark" type="submit">
               Login
             </Button>
           </Form>
         </Col>
-        <Col class="col-2">
+        <Col >
           <h2 class="text-center">OR</h2>
         </Col>
         <Col>
