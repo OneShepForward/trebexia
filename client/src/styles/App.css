@@ -2,16 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
+
+a:hover, a:focus {
+  color: #34495e;
+}
+
+p {
+  color: #34495e;
+}
+
 
 body, html {
   background-color: #101427;
   color: #e2e2e2;
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
   line-height: 1;
-  margin: 0;
+  /* margin: 0; */
 }
 
 h1, h4 {
@@ -29,7 +37,7 @@ h2 {
 }
 
 div {
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   text-align: center;
 }
 
@@ -42,9 +50,6 @@ div {
   margin-top: .5em;
 }
 
-.question {
-  margin: .5em;
-}
 
 .error {
   color: red;
@@ -53,13 +58,6 @@ div {
 
 .scores-list {
   margin: 1em;
-}
-
-.table {
-  text-align: center;
-  margin: .5em;
-  width: 100%;
-  box-sizing: border-box; 
 }
 
 .label {
