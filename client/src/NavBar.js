@@ -8,6 +8,8 @@ import trebexia_header from "./trebexia_header.png";
 
 import { Switch, Route, Link } from "react-router-dom";
 
+import { Navbar } from "react-bootstrap";
+
 
 
 function NavBar({ user, onLogin, onLogout }) {
@@ -17,8 +19,9 @@ function NavBar({ user, onLogin, onLogout }) {
     }).then(() => onLogout());
   }
 
-  return (
-    <div>
+  function renderHeader() {
+    return (
+      <div>
       <header className="header">
         <nav>
           <Link to="/">
@@ -67,6 +70,14 @@ function NavBar({ user, onLogin, onLogout }) {
         </Route>
       </Switch>
     </div>
+    )
+  }
+
+  return (
+    <Navbar >
+      {renderHeader()}
+
+    </Navbar>
   );
 }
 
