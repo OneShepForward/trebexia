@@ -13,6 +13,10 @@ p {
   color: #34495e;
 }
 
+.white-link {
+  color: #e2e2e2;
+}
+
 
 body, html {
   background-color: #101427;

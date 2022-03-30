@@ -18,7 +18,7 @@ function Home({ user, onLogin, onLogout }) {
         <h4 className="welcome">Welcome, {user.username}!</h4>
       ) : (
         <h4>
-          <a href="/login">Sign up</a> or <a href="/login">sign in</a> to save
+          <a className="white-link" href="/login">Sign up</a> or <a className="white-link" href="/login">sign in</a> to save
           your scores
         </h4>
       )}

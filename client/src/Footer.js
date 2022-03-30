@@ -14,8 +14,8 @@ function Footer() {
             </Navbar.Brand>
           </Row>
           <Row>
-            <p style={{ "color": "white" }}>
-              <small>© 2022 Morganick Productions</small>
+            <p style={{ "color": "white" }} >
+              <small><a className="white-link" href="https://github.com/OneShepForward/trebexia">© 2022 Morganick Productions</a></small>
             </p>
           </Row>
         </Col>
