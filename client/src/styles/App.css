@@ -2,14 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a:hover, a:focus {
+  color: #34495e;
 }
 
 body, html {
   background-color: #101427;
   color: #e2e2e2;
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
   line-height: 1;
   margin: 0;
 }

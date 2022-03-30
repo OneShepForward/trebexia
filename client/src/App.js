@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 import "./styles/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
   const [user, setUser] = useState(null);

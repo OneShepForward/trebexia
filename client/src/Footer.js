@@ -5,7 +5,7 @@ import { Nav, Image, Row, Col } from "react-bootstrap";
 
 function Footer() {
   return (
-    <Nav activeKey="/home">
+    <Nav className="sticky-bottom" activeKey="/home">
       <Col>
         <Row>
           <Nav.Item>
